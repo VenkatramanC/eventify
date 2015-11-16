@@ -1,6 +1,12 @@
 <h1>Events#index</h1>
-<ul> 
+<section id="events">
   <% Event.all.each do|event|%>
-    <li><%= event.inspect %></li>
+    <div class="event well">
+      <%= link_to 'show' , event_path(event) ,class: "pull-right"%>
+      <h3><%= event.title %></h3>
+      <p>
+        <%= event.description %>
+      </p>
+    </div>
   <% end %>
-</ul>
+</section>  

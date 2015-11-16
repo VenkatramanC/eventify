@@ -9,10 +9,14 @@ class EventsController < ApplicationController
     @event.start_time = parse_time(:event , "start_time") 
     @event.end_time =  parse_time(:event , "end_time")
     @event.save
-    redirect to events_path 
+    redirect_to events_path 
   end
 
   def index
+  end
+
+  def show 
+    @event = Event.find(params[:id])   
   end
 
   private
