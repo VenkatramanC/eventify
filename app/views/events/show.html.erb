@@ -1,19 +1,17 @@
 <div class="container">
   <div class="row">
     <h3>Event</h3>
-    <div class="col-sm-8">Event Details
-     <h3>
-     <%= @event.title %>
-     </h3> 
-       
-      <%= @event.description %>
-    </div>
-    <div class="col-sm-4">
+    <div class="col-sm-7 well">Event Details
+      <h3>
+        <%= @event.title %>
+      </h3>  
+        <%= @event.description %>
+      </div>
+    <div class="col-sm-4 well">
       <h3>Bookings</h3>
       <input type="text-box">
       <button class="btn btn-primary">Attend</button>
       <h3>Attendees</h3>
-
     </div>
   </div>  
 </div>

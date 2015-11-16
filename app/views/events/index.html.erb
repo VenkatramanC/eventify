@@ -1,12 +1,10 @@
-<h1>Events#index</h1>
+<h1>Events</h1>
 <section id="events">
-  <% Event.all.each do|event|%>
-    <div class="event well">
-      <%= link_to 'show' , event_path(event) ,class: "pull-right"%>
-      <h3><%= event.title %></h3>
-      <p>
-        <%= event.description %>
-      </p>
+  <% if @events.any? %>
+    <%= render @events %>
+  <% else %>
+    <div class="well">
+      <p>No Events yet</p>
     </div>
   <% end %>
 </section>  

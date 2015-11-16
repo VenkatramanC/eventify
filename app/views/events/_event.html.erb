@@ -1,1 +1,7 @@
-_event.html.erb
+<div class="event well">
+    <%= link_to "show" , event_path(event) ,class: "pull-right"%>
+  <h3><%= event.title %></h3>
+  <p>
+     <%= event.description %>
+  </p>
+</div>
