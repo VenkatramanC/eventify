@@ -3,7 +3,6 @@ class EventsController < ApplicationController
     @event = Event.pretty_new
   end
 
-
   def create
     @event = Event.new(event_params) 
     @event.start_time = parse_time(:event , "start_time") 
@@ -18,8 +17,8 @@ class EventsController < ApplicationController
 
   def show 
     @event = Event.find(params[:id]) 
-    @new_attend = Attend.new 
-    @attends = Attend.all 
+    @attends = @event.attends.all 
+    @new_attend = @event.attends.new
   end
 
   private
