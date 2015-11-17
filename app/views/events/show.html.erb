@@ -1,7 +1,7 @@
 <section id="event" class="container-fluid">   
   <div class="row">
     <h3>Event</h3>
-    <div class="col-sm-9 well">Event Details
+    <div class="col-sm-9 well">
       <h3>
         <%= @event.title %>
       </h3>  
@@ -9,19 +9,7 @@
     </div>
     <div class="col-sm-3">
     <div class="well">
-      <% if @event.start_time.to_date == @event.end_time.to_date %> 
-      <div class="common_date">
-        <h3><%= @event.start_time.strftime("%b %-d, %Y")%></h3>
-        <p>
-          <%= @event.start_time.strftime("%l:%M %P")%> - <%= @event.end_time.strftime("%l:%M %P")%>
-        </p>
-      </div>
-      <% else %>
-       <h3><%= @event.start_time.strftime("%b %-d, %Y %l:%M %P")%></h3>
-       <p> to  
-       </p>
-       <h3><%= @event.end_time.strftime("%b %-d, %Y %l:%M %P")%></h3>
-      <% end %>
+      <%= event_time_tag(@event) %>
     </div>
     <div class="well"> 
       <h3>Bookings</h3>
