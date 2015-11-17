@@ -11,11 +11,15 @@
     <div class="well">
       <%= event_time_tag(@event) %>
     </div>
-    <div class="well"> 
-      <h3>Bookings</h3>
-      <input type="text-box">
-      <button class="btn btn-primary btn-block">Attend</button>
+    <div class="well">   
       <h3>Attendees</h3>
+      <%= simple_form_for @new_attend do|f|%>
+        <%= f.input :email , label: false, placeholder: "Enter your E-mail" %>
+        <%= f.submit :"I Want to Attend" , class: "btn btn-primary btn-block"%>
+      <% end %>
+      <ul>
+        <%= render @attends %>
+      </ul>
     </div>
     </div>
   </div>  

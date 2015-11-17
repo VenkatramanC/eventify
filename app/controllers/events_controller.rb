@@ -17,7 +17,9 @@ class EventsController < ApplicationController
   end
 
   def show 
-    @event = Event.find(params[:id])   
+    @event = Event.find(params[:id]) 
+    @new_attend = Attend.new 
+    @attends = Attend.all 
   end
 
   private
